@@ -9,7 +9,8 @@ services:
 before_script: pip install docker-compose
 
 script: 
-  - docker-compose run app sh -c "coverage run --source=core manage.py test && flake8"
+  - docker-compose run app sh -c "manage.py test && flake8"
+  - docker-compose run app sh -c "coverage run --source=core"
 
 after_success:
   - coveralls
