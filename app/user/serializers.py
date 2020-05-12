@@ -23,7 +23,7 @@ class UserSerializer(serializers.ModelSerializer):
         if password:
             user.set_password(password)
             user.save()
-            
+
         return user
 
 
